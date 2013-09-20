@@ -272,6 +272,7 @@ function checkNotificationFriends($creator_id,$toArray){
 
 function getAllTags(){
 	$name = get_input('term');
+	//plugin_setting may not be initialized at plugin activation
         $key = elgg_get_plugin_setting("autocomplete", "follow_tags");
         if (is_null($key)) {$key = 'yes';}
 	if($key == 'yes'){
