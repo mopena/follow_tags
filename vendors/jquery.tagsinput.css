@@ -1,4 +1,3 @@
-
 div.tagsinput {
 
 padding: 1px 5px 2px 5px;
@@ -35,7 +34,7 @@ padding: 1px 6px 0px;
 
 div.tagsinput input {
 font-family: 'Source Sans Pro', "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Verdana, Tahoma, Helvetica, sans-serif;
-width:auto;
+width:300px;
 font-size:14px;
 border:0px solid transparent;
 background:white;
