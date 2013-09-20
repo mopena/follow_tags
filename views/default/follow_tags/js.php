@@ -20,10 +20,11 @@ elgg.tags_input.init = function() {
 		var el = $(this);
 		$.getJSON( '<?php echo elgg_get_site_url(); ?>follow_tags_data', function( tags ) {	
 			el.tagsInput({
-				autocomplete_url:tags,
+			        //uncommenting line after changes in follow_tags_lib.php file
+				//autocomplete_url:tags,
 				// target: autocomplete_url: ["Marketing","Australia","Berlin", ...],
 				// does not function:
-				// autocomplete_url:'<?php echo elgg_get_site_url(); ?>follow_tags_data',
+				 autocomplete_url:'<?php echo elgg_get_site_url(); ?>follow_tags_data',
 				width:'auto',
 				height:'auto',
 				defaultText:'<?php echo elgg_echo('follow_tags:tags_input:add'); ?>', 
