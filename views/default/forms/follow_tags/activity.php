@@ -20,7 +20,8 @@ if($value){
 		'value' => explode(",",$value),
 		));
 }
-
+//site url must be set.
+$url = elgg_get_site_url() . "follow_tags/settings/". $username;
 echo <<< HTML
 <ul class="elgg-list">
 	<li><span class="activity-tags">
@@ -28,7 +29,7 @@ echo <<< HTML
 	</span>
 	</li>
 </ul>
-<a class="elgg-button elgg-button-action button-tags-changesettings" href="/follow_tags/settings/$username"><span class="elgg-icon elgg-icon-settings-alt"></span>$changeSettingsString</a>
+<a class="elgg-button elgg-button-action button-tags-changesettings" href="$url"><span class="elgg-icon elgg-icon-settings-alt"></span>$changeSettingsString</a>
 
 HTML;
 
