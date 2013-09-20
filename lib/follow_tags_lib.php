@@ -271,7 +271,10 @@ function checkNotificationFriends($creator_id,$toArray){
  */
 
 function getAllTags(){
-	if(elgg_get_plugin_setting("autocomplete", "follow_tags") == 'yes'){
+	$name = get_input('term');
+        $key = elgg_get_plugin_setting("autocomplete", "follow_tags");
+        if (is_null($key)) {$key = 'yes';}
+	if($key == 'yes'){
 		$threshold = elgg_get_plugin_setting("threshold", "follow_tags");  
 		if(!$threshold) {
 			// Set Default threshold
@@ -281,8 +284,9 @@ function getAllTags(){
 		$options = array(
 			'limit'=>1000,
 			'threshold' => $threshold,
-            'tag_name' => 'tags',
-			);
+            		'tag_name' => 'tags',
+            		'wheres' => array("(msv.string LIKE \"%{$name}%\")"),
+		);
 		$tags =elgg_get_tags($options);
 		
 		foreach ($tags as $tag) {
